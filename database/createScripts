@@ -1,0 +1,40 @@
+-- Database: clinic_mgmt_db
+
+-- DROP DATABASE clinic_mgmt_db;
+
+CREATE DATABASE clinic_mgmt_db
+  WITH OWNER = postgres
+       ENCODING = 'UTF8'
+       TABLESPACE = pg_default
+       LC_COLLATE = 'C'
+       LC_CTYPE = 'C'
+       CONNECTION LIMIT = -1;
+
+
+
+-- Table: patitent
+
+-- DROP TABLE patitent;
+
+CREATE TABLE patitent
+(
+  id serial NOT NULL,
+  first_name character varying(25) NOT NULL,
+  last_name character varying(25) NOT NULL,
+  contact_number1 character varying(15),
+  contact_number2 character varying(15),
+  address_line character varying(70),
+  city character varying(25),
+  state character varying(25),
+  country character varying(25),
+  pincode character varying(15),
+  date_of_birth date NOT NULL,
+  date_of_death date,
+  start_date date NOT NULL,
+  CONSTRAINT primarykey PRIMARY KEY (id)
+)
+WITH (
+  OIDS=FALSE
+);
+ALTER TABLE patitent
+  OWNER TO postgres;
