@@ -12,11 +12,11 @@ CREATE DATABASE clinic_mgmt_db
 
 
 
--- Table: patitent
+-- Table: patient
 
--- DROP TABLE patitent;
+-- DROP TABLE patient;
 
-CREATE TABLE patitent
+CREATE TABLE patient
 (
   id serial NOT NULL,
   first_name character varying(25) NOT NULL,
@@ -36,5 +36,16 @@ CREATE TABLE patitent
 WITH (
   OIDS=FALSE
 );
-ALTER TABLE patitent
+ALTER TABLE patient
   OWNER TO postgres;
+
+
+
+INSERT INTO patient(
+             first_name, last_name, contact_number1, contact_number2, 
+            address_line, city, state, country, pincode, date_of_birth, date_of_death, 
+            start_date)
+    VALUES ( 'prashant', 'choudhari', '8087101609', null, 
+            'Tukai Darshan', 'Pune', 'Mah', 'India', '412308', '1991-03-21', null, '2015-11-29'
+            );
+
